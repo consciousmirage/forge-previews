@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>The Queen Bee Giftery — Creative Pack Preview · Forge Media</title>
+<meta name="description" content="A custom creative pack made for The Queen Bee Giftery. Preview every asset, unlock the full pack instantly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0d;
+    --bg-raised: #131316;
+    --line: rgba(255,255,255,.08);
+    --text: #ececec;
+    --text-dim: #9b9ba3;
+    --accent: #e8c873;
+    --accent-ink: #161204;
+    --radius: 14px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- header ---------- */
+  header {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand-mark {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600; font-size: 17px; letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .brand-tag { font-size: 12px; color: var(--text-dim); letter-spacing: .08em; text-transform: uppercase; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 72px 0 56px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(34px, 7vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -.01em;
+    max-width: 18ch;
+  }
+  .intro {
+    margin-top: 22px;
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 52ch;
+  }
+  .hero-cta { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 16px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 0 0 0 rgba(232,200,115,0);
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(232,200,115,.22); }
+  .btn:active { transform: translateY(0); }
+  .btn-note { font-size: 13px; color: var(--text-dim); }
+
+  /* ---------- gallery ---------- */
+  .section-label {
+    font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--text-dim);
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .gallery { padding: 28px 0 12px; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: start; /* tiles hug their image height — no dead space with mixed aspect ratios */
+  }
+  @media (min-width: 600px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 18px; } }
+  @media (min-width: 920px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  .tile {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    cursor: zoom-in;
+    padding: 0;
+    display: block;
+    width: 100%;
+  }
+  .tile img {
+    display: block; width: 100%; height: auto;
+    transition: transform .35s ease;
+  }
+  .tile:hover img { transform: scale(1.025); }
+  .tile .tag {
+    position: absolute; top: 10px; left: 10px;
+    font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+    background: rgba(0,0,0,.55); color: rgba(255,255,255,.85);
+    padding: 5px 10px; border-radius: 999px;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  }
+  .gallery-note { margin-top: 20px; font-size: 13px; color: var(--text-dim); text-align: center; }
+
+  /* ---------- pack contents ---------- */
+  .pack { padding: 72px 0; }
+  .pack-card {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 40px 28px;
+  }
+  @media (min-width: 720px) { .pack-card { padding: 56px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; } }
+  .pack h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500; font-size: clamp(26px, 4.5vw, 36px); line-height: 1.15;
+  }
+  .pack-sub { margin-top: 14px; color: var(--text-dim); font-size: 15px; }
+  .pack ul { list-style: none; margin-top: 28px; }
+  @media (min-width: 720px) { .pack ul { margin-top: 0; } }
+  .pack li {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .pack li:last-child { border-bottom: none; }
+  .pack li::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    margin-top: 8px;
+  }
+
+  /* ---------- price / CTA ---------- */
+  .buy { padding: 8px 0 88px; text-align: center; }
+  .price {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(48px, 9vw, 72px);
+    font-weight: 500;
+    line-height: 1;
+  }
+  .price sup { font-size: .45em; vertical-align: super; margin-right: 2px; }
+  .price-sub { margin-top: 12px; color: var(--text-dim); font-size: 15px; }
+  .buy .btn { margin-top: 30px; font-size: 17px; padding: 18px 40px; }
+  .guarantee { margin-top: 18px; font-size: 13px; color: var(--text-dim); }
+
+  /* ---------- footer ---------- */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 44px 0 calc(44px + env(safe-area-inset-bottom));
+    text-align: center;
+  }
+  footer p { color: var(--text-dim); font-size: 14px; max-width: 44ch; margin: 0 auto; }
+  footer a { color: var(--text); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.25); }
+  footer a:hover { border-bottom-color: var(--accent); }
+  .foot-brand {
+    margin-top: 28px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  /* ---------- lightbox ---------- */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 50;
+    background: rgba(8,8,10,.96);
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 20px;
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 100%; max-height: calc(100vh - 120px);
+    border-radius: 10px;
+    box-shadow: 0 24px 80px rgba(0,0,0,.6);
+  }
+  .lb-btn {
+    position: absolute;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.14);
+    color: var(--text);
+    width: 44px; height: 44px; border-radius: 50%;
+    font-size: 18px; line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .15s ease;
+  }
+  .lb-btn:hover { background: rgba(255,255,255,.16); }
+  .lb-close { top: max(18px, env(safe-area-inset-top)); right: 18px; }
+  .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+  .lb-count {
+    position: absolute; bottom: max(20px, env(safe-area-inset-bottom));
+    left: 50%; transform: translateX(-50%);
+    font-size: 13px; color: var(--text-dim); letter-spacing: .08em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <div class="brand-mark">Forge&nbsp;Media</div>
+    <div class="brand-tag">Creative Pack Preview</div>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <span class="eyebrow">Made for The Queen Bee Giftery</span>
+    <h1>Your custom creative pack is ready.</h1>
+    <p class="intro">With your June 19 chocolate tasting around the corner and a summer full of events at the hive, I made these ten pieces so your visuals are finally as good as the chocolate.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#stripe-link-pending">Get the full pack — $149</a>
+      <span class="btn-note">Instant delivery, no watermarks</span>
+    </div>
+  </section>
+
+  <section class="gallery wrap">
+    <div class="section-label">The Previews · 10 assets</div>
+    <div class="grid" id="grid">
+      <button class="tile" type="button" aria-label="View asset 1">
+        <img src="img/asset-01.jpg" alt="The Queen Bee Giftery creative 1" loading="lazy">
+        <span class="tag">Preview 01</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 2">
+        <img src="img/asset-02.jpg" alt="The Queen Bee Giftery creative 2" loading="lazy">
+        <span class="tag">Preview 02</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 3">
+        <img src="img/asset-03.jpg" alt="The Queen Bee Giftery creative 3" loading="lazy">
+        <span class="tag">Preview 03</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 4">
+        <img src="img/asset-04.jpg" alt="The Queen Bee Giftery creative 4" loading="lazy">
+        <span class="tag">Preview 04</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 5">
+        <img src="img/asset-05.jpg" alt="The Queen Bee Giftery creative 5" loading="lazy">
+        <span class="tag">Preview 05</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 6">
+        <img src="img/asset-06.jpg" alt="The Queen Bee Giftery creative 6" loading="lazy">
+        <span class="tag">Preview 06</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 7">
+        <img src="img/asset-07.jpg" alt="The Queen Bee Giftery creative 7" loading="lazy">
+        <span class="tag">Preview 07</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 8">
+        <img src="img/asset-08.jpg" alt="The Queen Bee Giftery creative 8" loading="lazy">
+        <span class="tag">Preview 08</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 9">
+        <img src="img/asset-09.jpg" alt="The Queen Bee Giftery creative 9" loading="lazy">
+        <span class="tag">Preview 09</span>
+      </button>
+      <button class="tile" type="button" aria-label="View asset 10">
+        <img src="img/asset-10.jpg" alt="The Queen Bee Giftery creative 10" loading="lazy">
+        <span class="tag">Preview 10</span>
+      </button>
+    </div>
+    <p class="gallery-note">Tap any image to view it full screen. Watermarks come off the moment you unlock the pack.</p>
+  </section>
+
+  <section class="pack wrap">
+    <div class="pack-card">
+      <div>
+        <h2>Everything in the The Queen Bee Giftery pack</h2>
+        <p class="pack-sub">Built specifically for your business — not templates. Ready to post the day you get them.</p>
+      </div>
+      <ul>
+        <li>All 10 creatives, full resolution, zero watermarks</li>
+        <li>Sized for Instagram, Facebook &amp; Stories</li>
+        <li>Print-ready versions included</li>
+        <li>Full commercial usage rights — they're yours</li>
+        <li>Delivered instantly after checkout</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="buy wrap">
+    <div class="price"><sup>$</sup>149</div>
+    <p class="price-sub">One-time. The whole pack. No subscription, no upsell.</p>
+    <a class="btn" href="#stripe-link-pending">Get the full pack — $149</a>
+    <p class="guarantee">Secure checkout via Stripe</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Questions? Reply to my email or give me a call — happy to tweak anything in the pack before you buy. <a href="mailto:consciousmirage@gmail.com">consciousmirage@gmail.com</a></p>
+    <div class="foot-brand">Forge Media</div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" src="" alt="Preview">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+
+<script>
+(function () {
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.tile'));
+  var srcs = tiles.map(function (t) { return t.querySelector('img').src; });
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCount = document.getElementById('lbCount');
+  var idx = 0;
+
+  function show(i) {
+    idx = (i + srcs.length) % srcs.length;
+    lbImg.src = srcs[idx];
+    lbCount.textContent = (idx + 1) + ' / ' + srcs.length;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  tiles.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(i); });
+  });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+  document.getElementById('lbNext').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+
+  // basic swipe support
+  var touchX = null;
+  lb.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (touchX === null) return;
+    var dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) show(dx > 0 ? idx - 1 : idx + 1);
+    touchX = null;
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
